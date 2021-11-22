@@ -572,6 +572,12 @@ bool handleSet(AsyncWebServerRequest *request, const String& req, bool apply)
       bri = 255;
       nightlightActive = false; //always disable nightlight when toggling
     }
+
+    if(lxValue == 0){
+      briLast = bri; 
+      bri = 0;
+    }
+
   }
   pos = req.indexOf(F("LY=")); // Lox secondary color
   if (pos > 0) {
@@ -580,6 +586,12 @@ bool handleSet(AsyncWebServerRequest *request, const String& req, bool apply)
       bri = 255;
       nightlightActive = false; //always disable nightlight when toggling
     }
+
+    if(lxValue == 0){
+      briLast = bri; 
+      bri = 0;
+    }
+
   }
 
   #endif
